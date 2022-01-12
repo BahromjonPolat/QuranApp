@@ -3,6 +3,7 @@
 export 'package:quran/screens/home/home_page.dart';
 
 // Widgets
+export 'package:quran/widgets/custom_text_widget.dart';
 
 // Components
 export 'package:quran/core/components/size_config.dart';
