@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
-import 'package:quran/widgets/custom_text_widget.dart';
-import 'package:quran/widgets/my_edge_insets.dart';
 
 class CustomButton extends StatelessWidget {
   VoidCallback onPressed;
@@ -26,6 +24,7 @@ class CustomButton extends StatelessWidget {
       ),
       style: ElevatedButton.styleFrom(
         primary: color,
+        elevation: 0.0,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(getWidth(30.0))),
         padding: MyEdgeInsets.symmetric(horizontal: 40, vertical: 16.0),

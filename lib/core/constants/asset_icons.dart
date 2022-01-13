@@ -9,4 +9,5 @@ class AssetIcons {
   static const String search = 'assets/icons/search.svg';
   static const String share = 'assets/icons/share.svg';
   static const String sort = 'assets/icons/sort.svg';
+
 }
