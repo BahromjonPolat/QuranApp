@@ -7,9 +7,13 @@ export 'package:quran/widgets/custom_text_widget.dart';
 export 'package:quran/widgets/custom_button.dart';
 export 'package:quran/widgets/my_decoration.dart';
 export 'package:quran/widgets/my_edge_insets.dart';
+export 'package:quran/widgets/my_sized_box.dart';
+export 'package:quran/widgets/my_app_bar.dart';
+
 
 // Components
 export 'package:quran/core/components/size_config.dart';
+export 'package:quran/core/components/custom_navigator.dart';
 
 // Constants
 export 'package:quran/core/constants/colors.dart';

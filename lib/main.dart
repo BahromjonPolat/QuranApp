@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:quran/core/theme/light_theme.dart';
 import 'package:quran/screens/home/home_page.dart';
 import 'package:quran/screens/splash/splash_screen_page.dart';
 
@@ -22,9 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Quran App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: CustomTheme.lightTheme,
       home: const SplashScreen(),
     );
   }
