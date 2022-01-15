@@ -7,4 +7,9 @@ class MyEdgeInsets {
         horizontal: getWidth(horizontal),
         vertical: getHeight(vertical),
       );
+
+  static all(double size) => EdgeInsets.symmetric(
+        horizontal: getWidth(size),
+        vertical: getHeight(size),
+      );
 }

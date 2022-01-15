@@ -8,5 +8,6 @@ class ConstColors {
   static const Color withOpacity = Color(0x0d863ed5);
   static const Color darkBackground = Color(0xFF091945);
   static const Color orange = Color(0xFFF9B091);
+  static const Color unselected = Color(0xFFF2F3F5);
 
 }

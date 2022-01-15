@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
+import 'package:quran/widgets/my_icon_button.dart';
 
 class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   String title;
@@ -13,7 +14,8 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title),
-
+      leading: MyIconButton(onPressed: () {}, assetIcon: AssetIcons.sort),
+      actions: [MyIconButton(onPressed: () {}, assetIcon: AssetIcons.search)],
     );
   }
 

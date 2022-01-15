@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
+import 'package:quran/widgets/book_logo.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class SplashScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SvgPicture.asset(AssetImages.sky),
-                SvgPicture.asset(AssetImages.book),
+                BookLogo(),
                 Transform.translate(
                     offset: Offset(0.0, getHeight(30.0)),
                     child: CustomButton(onPressed: () {
