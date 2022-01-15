@@ -11,7 +11,11 @@ class HomePage extends StatelessWidget {
         title: "Quran App",
       ),
       body: Column(
-        children: [LastReadCard(), MyTabBar()],
+        children: [
+          const LastReadCard(),
+          MyTabBar(),
+          SurahTable(),
+        ],
       ),
     );
   }

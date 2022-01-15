@@ -11,6 +11,7 @@ export 'package:quran/widgets/my_sized_box.dart';
 export 'package:quran/widgets/my_app_bar.dart';
 export 'package:quran/widgets/last_read_card.dart';
 export 'package:quran/widgets/my_tab_bar.dart';
+export 'package:quran/widgets/surah_table.dart';
 
 
 // Components
