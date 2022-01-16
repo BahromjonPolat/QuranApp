@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran/core/components/size_config.dart';
+import 'package:quran/core/components/exporting_packages.dart';
 
 class MyDecoration {
   static BoxDecoration deco({

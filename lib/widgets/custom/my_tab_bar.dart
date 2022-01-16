@@ -9,15 +9,17 @@ class MyTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _provider = context.watch();
-    return Container(
-      margin: MyEdgeInsets.symmetric(horizontal: 18.0, vertical: 24.0),
-      child: Row(
-        children: [
-          _setTab(label: 'Surah', index: 0),
-          _setTab(label: 'Para', index: 1),
-          _setTab(label: 'Page', index: 2),
-          _setTab(label: 'Hizb', index: 3),
-        ],
+    return SliverToBoxAdapter(
+      child: Container(
+        margin: MyEdgeInsets.symmetric(horizontal: 18.0, vertical: 24.0),
+        child: Row(
+          children: [
+            _setTab(label: 'Surah', index: 0),
+            _setTab(label: 'Para', index: 1),
+            _setTab(label: 'Page', index: 2),
+            _setTab(label: 'Bookm', index: 3),
+          ],
+        ),
       ),
     );
   }

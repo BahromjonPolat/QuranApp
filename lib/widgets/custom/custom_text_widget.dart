@@ -7,6 +7,8 @@ class CustomText extends StatelessWidget {
   double size;
   Color color;
   TextAlign align;
+  String? fontFamily;
+  double? lineHeight;
 
   CustomText(
     this.data, {
@@ -15,6 +17,8 @@ class CustomText extends StatelessWidget {
     this.weight = FontWeight.w500,
     this.size = 14.0,
     this.align = TextAlign.left,
+    this.fontFamily,
+    this.lineHeight,
   }) : super(key: key);
 
   @override
@@ -26,6 +30,8 @@ class CustomText extends StatelessWidget {
         fontSize: getWidth(size),
         fontWeight: weight,
         color: color,
+        fontFamily: fontFamily,
+        height: lineHeight != null ? getHeight(lineHeight!) : null,
       ),
     );
   }

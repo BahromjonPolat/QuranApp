@@ -10,16 +10,19 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
     required this.title,
   }) : super(key: key);
 
+
+  late DrawerProvider _drawerProvider;
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    _drawerProvider = context.watch();
+    return SliverAppBar(
       title: Text(title),
-      leading: MyIconButton(onPressed: () {}, assetIcon: AssetIcons.sort),
+      floating: true,
+      leading: MyIconButton(onPressed: _drawerProvider.onTap, assetIcon: AssetIcons.sort),
       actions: [MyIconButton(onPressed: () {}, assetIcon: AssetIcons.search)],
     );
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size(getWidth(375.0), getHeight(70.0));
 }

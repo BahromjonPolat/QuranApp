@@ -7,7 +7,14 @@ class SurahTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: SvgPicture.asset(AssetIcons.hexagon),
+      onTap: _onTap,
+      leading: Stack(
+        alignment: Alignment.center,
+        children: [
+          SvgPicture.asset(AssetIcons.hexagon),
+          CustomText('14', size: 12.0),
+        ],
+      ),
       title: CustomText('Al-Fatiha', size: 16.0),
       subtitle: CustomText('MACCA 7 oyat', size: 12.0),
       trailing: CustomText(
@@ -17,5 +24,9 @@ class SurahTable extends StatelessWidget {
         weight: FontWeight.w700,
       ),
     );
+  }
+
+  void _onTap() {
+    navigatorPush(SurahPage());
   }
 }

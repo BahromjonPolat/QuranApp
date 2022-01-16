@@ -10,12 +10,10 @@ class HomePageDrawer extends StatelessWidget {
       backgroundColor: ConstColors.primary,
       body: ListView(
         children: [
-
-          ListTile(
+          const ListTile(
             leading: CircleAvatar(),
-            title: Text('Quran Qpp'),
+            title: Text('Quran App'),
             trailing: Icon(Icons.dark_mode),
-
           ),
           _setCategory(),
           _setCategory(),
