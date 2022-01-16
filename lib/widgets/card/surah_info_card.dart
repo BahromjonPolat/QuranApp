@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
+import 'package:quran/core/data/surah_data.dart';
+import 'package:quran/models/surah_model.dart';
 
 class SurahInfoCard extends StatelessWidget {
-  const SurahInfoCard({Key? key}) : super(key: key);
+
+   SurahInfoCard({Key? key}) : super(key: key);
+   final Surah _surah = SurahData.currentSurah;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +22,12 @@ class SurahInfoCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            CustomText('Al-Fatiha', color: Colors.white, size: 26.0),
+            CustomText(_surah.name!, color: Colors.white, size: 26.0),
             MySizedBox(height: 4.0),
-            CustomText('Ochuvchi', color: Colors.white, size: 16.0),
+            CustomText(_surah.meaning!, color: Colors.white, size: 16.0),
             Divider(
                 color: Colors.white, thickness: 1.0, height: getHeight(32.0)),
-            CustomText('Macca - 7 oyat'.toUpperCase(), color: Colors.white),
+            CustomText('Macca - ${_surah.count} oyat'.toUpperCase(), color: Colors.white),
             const Spacer(),
             SvgPicture.asset(AssetImages.basmalah),
           ],

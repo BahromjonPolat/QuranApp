@@ -1,0 +1,14 @@
+{
+  "verse" : 1,
+  "para" : 1,
+  "arabic" : "Arabic",
+  "meaning" : "Meaning",
+  "transcription" : "Transcription",
+  "audio" : "path",
+  "surah": {
+    "name" : "Baqarah",
+    "verseAmount": 256,
+    "tanzil" : "Madina"
+
+  }
+}

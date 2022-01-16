@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
+import 'package:quran/core/data/surah_data.dart';
+import 'package:quran/models/surah_model.dart';
 
 class SurahTable extends StatelessWidget {
-  const SurahTable({Key? key}) : super(key: key);
+  Surah surah;
+
+  SurahTable({Key? key, required this.surah}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +16,12 @@ class SurahTable extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(AssetIcons.hexagon),
-          CustomText('14', size: 12.0),
+          CustomText('${surah.surahNo}', size: 12.0),
         ],
       ),
-      title: CustomText('Al-Fatiha', size: 16.0),
-      subtitle: CustomText('MACCA 7 oyat', size: 12.0),
-      trailing: CustomText(
-        'ناﺮﻤﻋ لآ',
+      title: CustomText(surah.name!, size: 16.0),
+      subtitle: CustomText('MACCA ${surah.count} OYAT', size: 12.0),
+      trailing: CustomText(surah.arabic!,
         size: 20.0,
         color: ConstColors.primary,
         weight: FontWeight.w700,
@@ -27,6 +30,7 @@ class SurahTable extends StatelessWidget {
   }
 
   void _onTap() {
+    SurahData.currentSurah = surah;
     navigatorPush(SurahPage());
   }
 }

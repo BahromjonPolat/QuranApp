@@ -26,3 +26,10 @@ class CustomNavigator {
     );
   }
 }
+
+void navigatorPush(Widget page) {
+  Navigator.push(
+    CustomNavigator._context,
+    MaterialPageRoute(builder: (_) => page),
+  );
+}

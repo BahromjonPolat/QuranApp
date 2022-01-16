@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
+import 'package:quran/core/data/surah_data.dart';
+import 'package:quran/models/surah_model.dart';
 
 class HomeMainPage extends StatelessWidget {
   HomeMainPage({Key? key}) : super(key: key);
@@ -30,21 +32,22 @@ class HomeMainPage extends StatelessWidget {
 
   List<Widget> _children() {
     return [
-      _buildListView(5),
-      _buildListView(10),
-      _buildListView(3),
-      _buildListView(26),
+      _buildListView(),
+      _buildListView(),
+      _buildListView(),
+      _buildListView(),
     ];
   }
 
-  ListView _buildListView(int count) {
+  ListView _buildListView() {
     return ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         // primary: false,
-        itemCount: count,
+        itemCount: SurahData.list.length,
         itemBuilder: (ctx, i) {
-          return const SurahTable();
+          Surah surah = Surah.fromJson(SurahData.list[i]);
+          return SurahTable(surah: surah);
         });
   }
 }

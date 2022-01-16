@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
-import 'package:quran/widgets/my_icon_button.dart';
+import 'package:quran/widgets/custom/my_icon_button.dart';
 
 class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   String title;
