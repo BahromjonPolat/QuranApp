@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
-import 'package:quran/core/data/surah_data.dart';
-import 'package:quran/models/surah_model.dart';
 
 class SurahTable extends StatelessWidget {
   Surah surah;
@@ -19,9 +17,9 @@ class SurahTable extends StatelessWidget {
           CustomText('${surah.surahNo}', size: 12.0),
         ],
       ),
-      title: CustomText(surah.name!, size: 16.0),
+      title: CustomText(surah.name, size: 16.0),
       subtitle: CustomText('MACCA ${surah.count} OYAT', size: 12.0),
-      trailing: CustomText(surah.arabic!,
+      trailing: CustomText(surah.arabic,
         size: 20.0,
         color: ConstColors.primary,
         weight: FontWeight.w700,
