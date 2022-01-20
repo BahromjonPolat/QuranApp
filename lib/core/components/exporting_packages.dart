@@ -16,6 +16,7 @@ export 'package:quran/widgets/table/surah_table.dart';
 export 'package:quran/widgets/card/surah_info_card.dart';
 export 'package:quran/widgets/table/tasks_table.dart';
 export 'package:quran/widgets/table/verse_table.dart';
+export 'package:quran/widgets/custom/my_icon_button.dart';
 
 // Components
 export 'package:quran/core/components/size_config.dart';
@@ -40,6 +41,10 @@ export 'package:path_provider/path_provider.dart';
 // Providers
 export 'package:quran/provider/drawer_provider.dart';
 export 'package:quran/provider/tab_bar_provider.dart';
+
+// Data and Models
+export 'package:quran/models/surah_model.dart';
+export 'package:quran/core/data/surah_data.dart';
 
 // Others
 export 'package:flutter/services.dart';

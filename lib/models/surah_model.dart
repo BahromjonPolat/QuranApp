@@ -4,6 +4,7 @@ class Surah {
   String? _name;
   String? _meaning;
   String? _count;
+  bool? _isMeccian;
 
   Surah({
     int? surahNo,
@@ -11,6 +12,7 @@ class Surah {
     String? name,
     String? meaning,
     String? count,
+    bool? meccian,
   }) {
     if (surahNo != null) {
       _surahNo = surahNo;
@@ -27,27 +29,23 @@ class Surah {
     if (count != null) {
       _count = count;
     }
+
+    if (meccian != null) {
+      _isMeccian = meccian;
+    }
   }
 
-  int? get surahNo => _surahNo;
+  int get surahNo => _surahNo!;
 
-  set surahNo(int? surahNo) => _surahNo = surahNo;
+  String get arabic => _arabic!;
 
-  String? get arabic => _arabic;
+  String get name => _name!;
 
-  set arabic(String? arabic) => _arabic = arabic;
+  String get meaning => _meaning!;
 
-  String? get name => _name;
+  String get count => _count!;
 
-  set name(String? name) => _name = name;
-
-  String? get meaning => _meaning;
-
-  set meaning(String? meaning) => _meaning = meaning;
-
-  String? get count => _count;
-
-  set count(String? count) => _count = count;
+  bool get isMeccian => _isMeccian!;
 
   Surah.fromJson(Map<String, dynamic> json) {
     _surahNo = json['surahNo'];
@@ -55,15 +53,17 @@ class Surah {
     _name = json['name'];
     _meaning = json['meaning'];
     _count = json['count'];
+    _isMeccian = json['isMeccian'] == 1 ? true : false;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = {};
     data['surahNo'] = _surahNo;
     data['arabic'] = _arabic;
     data['name'] = _name;
     data['meaning'] = _meaning;
     data['count'] = _count;
+    data['isMeccian'] = _isMeccian! ? 1 : 0;
     return data;
   }
 }

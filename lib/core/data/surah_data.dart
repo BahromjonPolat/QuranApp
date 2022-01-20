@@ -1,8 +1,7 @@
 import 'package:quran/models/surah_model.dart';
 
 class SurahData {
-  static Surah currentSurah = Surah.fromJson(_list[0]);
-  static List<Map<String, dynamic>> get list => _list;
+
   static const List<Map<String, dynamic>> _list = [
     {
       "surahNo": 1,
@@ -803,4 +802,6 @@ class SurahData {
       "count": "6"
     },
   ];
+  static Surah currentSurah = Surah.fromJson(_list[0]);
+  static List<Map<String, dynamic>> get list => _list;
 }

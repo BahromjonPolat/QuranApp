@@ -1,42 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
-import 'package:quran/core/data/surah_data.dart';
-import 'package:quran/models/surah_model.dart';
 
 class SurahPage extends StatelessWidget {
   SurahPage({Key? key}) : super(key: key);
   final Surah _surah = SurahData.currentSurah;
+  final ScrollController _scrollController =
+  ScrollController(keepScrollOffset: true);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          MyAppBar(title: _surah.name!),
-          SurahInfoCard(),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            (ctx, i) {
-              return VerseTable();
-            },
-            childCount: 15,
-          )),
-        ],
-      ),
-    );
-  }
+      body: Scrollbar(
+        controller: _scrollController,
+        thickness: getWidth(6.0),
+        interactive: true,
+        hoverThickness: getWidth(12.0),
+        showTrackOnHover: true,
+        child: CustomScrollView(
+          slivers: [
+            MyAppBar(title: _surah.name),
+            SurahInfoCard(),
+            SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (ctx, i) {
 
-  SliverToBoxAdapter _buildSliverToBoxAdapter() {
-    return SliverToBoxAdapter(
-      child: Flexible(
-        child: ListView.builder(
-            padding: MyEdgeInsets.symmetric(horizontal: 24.0),
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 15,
-            itemBuilder: (_, __) {
-              return VerseTable();
-            }),
+                    return const VerseTable();
+                  },
+                  childCount: 15,
+                )),
+          ],
+        ),
       ),
     );
   }

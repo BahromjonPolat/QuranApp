@@ -43,7 +43,6 @@ class HomeMainPage extends StatelessWidget {
     return ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        // primary: false,
         itemCount: SurahData.list.length,
         itemBuilder: (ctx, i) {
           Surah surah = Surah.fromJson(SurahData.list[i]);

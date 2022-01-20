@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quran/core/components/exporting_packages.dart';
-import 'package:quran/widgets/custom/my_icon_button.dart';
 
 class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   String title;
@@ -10,15 +9,16 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
     required this.title,
   }) : super(key: key);
 
-
   late DrawerProvider _drawerProvider;
+
   @override
   Widget build(BuildContext context) {
     _drawerProvider = context.watch();
     return SliverAppBar(
       title: Text(title),
       floating: true,
-      leading: MyIconButton(onPressed: _drawerProvider.onTap, assetIcon: AssetIcons.sort),
+      leading: MyIconButton(
+          onPressed: _drawerProvider.onTap, assetIcon: AssetIcons.sort),
       actions: [MyIconButton(onPressed: () {}, assetIcon: AssetIcons.search)],
     );
   }
